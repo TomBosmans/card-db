@@ -1,3 +1,5 @@
+include .env
+
 start:
 	@docker compose start $(service)
 
@@ -20,10 +22,10 @@ shell:
 	@docker compose run --rm --no-deps $(service) sh
 
 psql:
-	@docker compose exec postgres sh -c "su - postgres -c 'psql $(db)'"
+	@docker compose exec postgres sh -c "su - postgres -c 'psql $(POSTGRES_DATABASE)'"
 
 dropdb:
-	@docker compose exec postgres sh -c "su - postgres -c 'dropdb $(db)'"
+	@docker compose exec postgres sh -c "su - postgres -c 'dropdb $(POSTGRES_DATABASE)'"
 
 createdb:
-	@docker compose exec postgres sh -c "su - postgres -c 'createdb $(db)'"
+	@docker compose exec postgres sh -c "su - postgres -c 'createdb $(POSTGRES_DATABASE)'"
