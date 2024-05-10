@@ -1,0 +1,17 @@
+{
+  "extends": "@tsconfig/node20/tsconfig.json",
+  "include": ["src/**/*", "specs/**/*"],
+  "compilerOptions": {
+    "outDir": "dist",
+    "esModuleInterop": true,
+    "baseUrl": ".",
+    "paths": {
+      "@utils/*": ["src/utils/*"],
+      "@schemas/*": ["src/schemas/*"],
+      "@config": ["src/config.ts"]
+    }
+  },
+  "ts-node": {
+    "swc": true
+  }
+}
