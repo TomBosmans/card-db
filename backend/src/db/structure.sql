@@ -42,7 +42,6 @@ CREATE TABLE public.cards (
     name character varying NOT NULL,
     collection public.collection_enum NOT NULL,
     meta jsonb DEFAULT '{}'::jsonb NOT NULL,
-    image_url character varying,
     created_at timestamp with time zone DEFAULT now() NOT NULL,
     updated_at timestamp with time zone DEFAULT now() NOT NULL
 );

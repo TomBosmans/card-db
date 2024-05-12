@@ -21,10 +21,10 @@ SET row_security = off;
 --
 
 COPY public.kysely_migration (name, "timestamp") FROM stdin;
-20240510T145024-create-table-users	2024-05-10T18:05:26.559Z
-20240510T151923-create-type-collection-enum	2024-05-10T18:05:26.560Z
-20240510T151927-create-table-cards	2024-05-10T18:05:26.562Z
-20240510T180017-create-table-decks	2024-05-10T18:05:26.565Z
+20240510T145024-create-table-users	2024-05-10T19:53:59.487Z
+20240510T151923-create-type-collection-enum	2024-05-10T19:53:59.489Z
+20240510T151927-create-table-cards	2024-05-10T19:53:59.491Z
+20240510T180017-create-table-decks	2024-05-10T19:53:59.494Z
 \.
 
 
