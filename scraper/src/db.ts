@@ -15,4 +15,6 @@ const dialect = new PostgresDialect({
 
 const db = new Kysely<DB>({ dialect })
 export type Collection = CollectionEnum
+
+export type Database = Kysely<DB>
 export default db

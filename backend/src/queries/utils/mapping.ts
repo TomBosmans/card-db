@@ -1,5 +1,6 @@
 import * as kysley from "kysely"
-import { Operator } from "./types"
+
+type Operator = "$eq" | "$ne" | "$lt" | "$lte" | "$gt" | "$gte" | "$in" | "$nin"
 
 export default function mapOperatorExpression<
   Value extends string | number | Date | boolean | null,

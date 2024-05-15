@@ -15,7 +15,7 @@
     "db:generate": "node -r ts-node/register -r tsconfig-paths/register src/lib/migrator/generate-migration.ts",
     "db:up": "node -r ts-node/register -r tsconfig-paths/register src/lib/migrator/up.ts",
     "db:down": "node -r ts-node/register -r tsconfig-paths/register src/lib/migrator/down.ts",
-    "db:generate:types": "node -r ts-node/register -r tsconfig-paths/register src/lib/migrator/generate-types.ts",
+    "db:generate:types": "node -r ts-node/register -r tsconfig-paths/register src/lib/migrator/generate-types.ts"
   },
   "keywords": [],
   "license": "ISC",
@@ -45,6 +45,7 @@
     "kysely": "^0.27.3",
     "pg": "^8.11.5",
     "pino-pretty": "^11.0.0",
+    "remeda": "^1.61.0",
     "tsconfig-paths": "^4.2.0",
     "zod": "^3.23.8"
   }
