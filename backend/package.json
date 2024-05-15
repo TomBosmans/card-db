@@ -11,6 +11,7 @@
     "test": "node -r ts-node/register --env-file=.env.test --test **/*.spec.ts",
     "lint": "eslint . --max-warnings 0 --report-unused-disable-directives",
     "lint:fix": "npm run lint -- --fix",
+    "generate-types": "DATABASE_URL=postgresql://postgres:@postgres:5432/card-db kysely-codegen --camel-case",
     "db:generate": "kysely-pg-migrator-tsnode generate --env=.env --folder=src/db",
     "db:up": "kysely-pg-migrator-tsnode up --env=.env --folder=src/db",
     "db:down": "kysely-pg-migrator-tsnode down --env=.env --folder=src/db",

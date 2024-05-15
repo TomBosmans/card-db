@@ -1,5 +1,5 @@
 import { Pool } from "pg"
-import { Kysely, PostgresDialect } from "kysely"
+import { CamelCasePlugin, Kysely, PostgresDialect } from "kysely"
 import { DB } from "kysely-codegen/dist/db"
 import config from "@config"
 
@@ -13,5 +13,5 @@ const dialect = new PostgresDialect({
   }),
 })
 
-const db = new Kysely<DB>({ dialect })
+const db = new Kysely<DB>({ dialect, plugins: [new CamelCasePlugin()] })
 export default db
