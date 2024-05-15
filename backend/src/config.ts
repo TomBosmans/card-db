@@ -42,4 +42,5 @@ const config = z
   }))
   .parse(process.env)
 
+export type Config = typeof config
 export default config

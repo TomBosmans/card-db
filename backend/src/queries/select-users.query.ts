@@ -1,5 +1,5 @@
 import * as R from "remeda"
-import db, { Database } from "src/db"
+import { Database } from "src/db"
 import selectClause, { Select } from "./common/select.clause"
 import orderByCluase, { OrderBy } from "./common/order-by.cluase"
 import whereClause, { Where } from "./common/where.clause"
@@ -11,7 +11,9 @@ export type Params = {
 }
 
 export default class SelectUsersQuery {
-  public build(params: Params = {}, eb: Database = db) {
+  constructor(private readonly db: Database) {}
+
+  public build(params: Params = {}, eb: Database = this.db) {
     return R.pipe(
       eb.selectFrom("users"),
       selectClause(params.select),

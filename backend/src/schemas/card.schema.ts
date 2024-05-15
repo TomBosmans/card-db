@@ -1,15 +1,15 @@
 import z from "zod"
 import collectionSchema from "./collection.schema"
 import deckSchema from "./deck.schema"
+import dateSchema from "./common/date.schema"
 
 const baseSchema = z.object({
   id: z.string().uuid(),
   name: z.string(),
   collection: collectionSchema,
-  meta: z.object({}),
-  imageUrl: z.string().url(),
-  createdAt: z.coerce.date(),
-  updatedAt: z.coerce.date(),
+  meta: z.any(),
+  createdAt: dateSchema,
+  updatedAt: dateSchema,
 })
 
 type Input = z.input<typeof baseSchema> & {

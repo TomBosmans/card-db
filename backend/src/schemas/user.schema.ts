@@ -1,5 +1,6 @@
 import z from "zod"
 import deckSchema from "./deck.schema"
+import dateSchema from "./common/date.schema"
 
 const baseSchema = z.object({
   id: z.string().uuid(),
@@ -7,8 +8,8 @@ const baseSchema = z.object({
   lastName: z.string(),
   email: z.string().email(),
   password: z.string(),
-  createdAt: z.coerce.date(),
-  updatedAt: z.coerce.date(),
+  createdAt: dateSchema,
+  updatedAt: dateSchema,
 })
 
 type Input = z.input<typeof baseSchema> & {

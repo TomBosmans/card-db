@@ -2,6 +2,7 @@ import z from "zod"
 import collectionSchema from "./collection.schema"
 import userSchema from "./user.schema"
 import cardSchema from "./card.schema"
+import dateSchema from "./common/date.schema"
 
 const baseSchema = z.object({
   id: z.string().uuid(),
@@ -10,8 +11,8 @@ const baseSchema = z.object({
   collection: collectionSchema,
   name: z.string(),
   meta: z.object({}),
-  createdAt: z.coerce.date(),
-  updatedAt: z.coerce.date(),
+  createdAt: dateSchema,
+  updatedAt: dateSchema,
 })
 
 type Input = z.input<typeof baseSchema> & {
