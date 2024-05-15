@@ -1,4 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
+import * as R from "remeda"
 import { DB } from "kysely-codegen/dist/db"
 import SelectQuery from "../types/select-query.type"
 
@@ -8,7 +9,7 @@ export default function orderByCluase<Table extends keyof DB>(orderBy?: OrderBy<
   return (query: SelectQuery<Table>) => {
     if (!orderBy) return query
 
-    const attributes = Object.keys(orderBy) as Array<keyof OrderBy<Table>>
+    const attributes = R.keys.strict(orderBy)
     for (const attribute of attributes) {
       query = query.orderBy(attribute as any, orderBy[attribute])
     }
