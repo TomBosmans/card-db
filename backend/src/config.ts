@@ -28,6 +28,9 @@ const config = z
       pool: {
         max: env.POSTGRES_POOL_MAX,
       },
+      url: env.POSTGRES_PASSWORD
+        ? `postgres://${env.POSTGRES_USER}:${env.POSTGRES_PASSWORD}@${env.POSTGRES_HOST}:${env.POSTGRES_PORT}/${env.POSTGRES_DATABASE}`
+        : `postgres://${env.POSTGRES_USER}@${env.POSTGRES_HOST}:${env.POSTGRES_PORT}/${env.POSTGRES_DATABASE}`,
     },
 
     minio: {
