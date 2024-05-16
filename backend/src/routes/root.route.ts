@@ -8,6 +8,9 @@ export default route(async (app) => {
     handler: async (request) => {
       const cardRepository = request.diScope.resolve<CardRepository>("cardRepository")
       return await cardRepository.count({
+        where: {
+          name: "21 or Bust",
+        },
         orderBy: { name: "asc" },
       })
     },
