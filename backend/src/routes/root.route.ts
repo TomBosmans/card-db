@@ -9,7 +9,9 @@ export default route(async (app) => {
       const cardRepository = request.diScope.resolve<CardRepository>("cardRepository")
       return await cardRepository.count({
         where: {
-          name: "21 or Bust",
+          name: {
+            $match: "land",
+          },
         },
         orderBy: { name: "asc" },
       })

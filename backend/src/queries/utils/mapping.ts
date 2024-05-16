@@ -1,6 +1,6 @@
 import * as kysley from "kysely"
 
-type Operator = "$eq" | "$ne" | "$lt" | "$lte" | "$gt" | "$gte" | "$in" | "$nin"
+type Operator = "$eq" | "$ne" | "$lt" | "$lte" | "$gt" | "$gte" | "$in" | "$nin" | "$match"
 
 export default function mapOperatorExpression<
   Value extends string | number | Date | boolean | null,
@@ -19,6 +19,8 @@ export default function mapOperatorExpression<
 
   if (operator === "$in") return "in"
   if (operator === "$nin") return "not in"
+
+  if (operator === "$match") return "ilike"
 
   return "="
 }
